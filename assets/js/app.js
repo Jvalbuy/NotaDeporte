@@ -92,6 +92,11 @@ function initFirebase(){
   }
   const app = firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
+  // Force session-only persistence (no remembered login)
+  auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(() => console.log("SESSION persistence active"))
+    .catch(err => console.error("Persistence error:", err));
+
   auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
   db = firebase.firestore();
   auth.onAuthStateChanged(user=>{
