@@ -1,0 +1,44 @@
+:root{
+  --bg: #003EA8;
+  --panel: #ffffff;
+  --accent: #FBBF24;
+  --muted: #e6eefc;
+  --good: #10b981;
+  --warn: #f59e0b;
+  --bad: #ef4444;
+  --text-on-blue: #f4f8ff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); margin:0; color:var(--text-on-blue)}
+.app{max-width:1100px;margin:18px auto;padding:12px}
+header{display:flex;align-items:center;gap:12px}
+.logo{height:40px;width:auto;border-radius:6px;background:white;padding:6px}
+header h1{font-size:1.1rem;margin:0;color:var(--text-on-blue)}
+main{display:grid;grid-template-columns:320px 1fr;gap:12px;margin-top:12px}
+.panel{background:rgba(255,255,255,0.95);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);color:#0f172a}
+#summary{position:sticky;top:12px}
+#summary h2{margin-top:0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.field{display:flex;flex-direction:column}
+.field label{font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+.field input, select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:1rem}
+.actions{display:flex;gap:8px;margin-top:12px}
+button{background:var(--accent);color:#04243a;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+button#limpiar{background:#e5e7eb;color:#111}
+.result-box{margin-top:12px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+#mensajes{margin-top:10px}
+.msg{padding:8px;border-radius:8px;margin-top:6px}
+.msg.fail{background:#fff5f5;border:1px solid #ffd2d2;color:var(--bad)}
+.msg.capped{background:#f5fff7;border:1px solid #bff0d1;color:var(--good)}
+.charts{margin-top:12px}
+.auth-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.auth-actions button{background:#0f172a;color:white;padding:8px 10px;border-radius:8px}
+input[type="email"], input[type="password"]{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ef}
+.evaluations-list .eval-card{padding:10px;border-radius:10px;border:1px solid #e6eefc;margin-bottom:8px;background:linear-gradient(180deg, #ffffff, #f6fbff)}
+@media (max-width:900px){
+  main{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:1fr}
+  #summary{order:2}
+}
